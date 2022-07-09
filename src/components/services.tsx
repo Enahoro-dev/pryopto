@@ -29,11 +29,11 @@ const Services:React.FC = () => {
             }
             return(
                 <div className='hidden service justify-center items-center w-11/12 mx-auto mb-16 md:flex lg:w-4/6' key={service.id}>
-                        <div className='w-3/5  text-start mr-12'>
+                        <div className='w-3/5  text-start mr-24'>
                             <h3 className='text-3xl font-bold mb-2'>{service.heading}</h3>
                             <p className=' text-lg font-semibold'>{service.body}</p>
                         </div>   
-                        <div className='w-2/5'>
+                        <div className='w-2/5 pl-24'>
                             <img className='max-w-[180px]' src={service.logo} alt="icon" />
                         </div>
                     </div>
