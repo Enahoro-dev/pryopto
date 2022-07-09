@@ -20,7 +20,7 @@ const Hero:React.FC<Props> = ({ setFormopen, formref}) => {
              }else{setFormopen(false)}   
             
         });
-    }, []);
+    }, [formref,setFormopen]);
     
 
     
