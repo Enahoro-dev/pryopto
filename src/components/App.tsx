@@ -12,8 +12,8 @@ const App:React.FC = () => {
   const[active,setActive]=useState<boolean>(false)
   const[formopen, setFormopen]= useState<boolean>(false)
 
-  const formoverlay = formopen? 'brightness-50 fixed':''
-  const formshow = formopen? '':'hidden'
+  const formoverlay = formopen? 'brightness-50 fixed':''// dim screen when form open (form open state is true)
+  const formshow = formopen? '':'hidden' //hide form when form is closed (form open state false)
 
   const formref=useRef<HTMLDivElement>(null)
   
@@ -21,7 +21,7 @@ const App:React.FC = () => {
 
   return (
     <>
-      <div className={`font-sans ${formoverlay}`}>
+      <div className={`font-dm ${formoverlay}`}>
         <Header active={active} setActive={setActive} />
         <Hero setFormopen={setFormopen} formref={formref}/>
         <About/>

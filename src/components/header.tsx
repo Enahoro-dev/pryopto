@@ -14,6 +14,7 @@ const Header:React.FC<Props> = ({active,setActive}) => {
 const barRef = useRef<HTMLButtonElement>(null) 
 
 useEffect(() => {
+    // close the nav bar is screen is clicked except if click target is nav button
     document.body.addEventListener('click', ({target}: MouseEvent) =>{
         if (barRef.current?.contains(target as Node)){
           return;
