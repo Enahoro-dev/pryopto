@@ -1,5 +1,6 @@
 import React, {useRef} from 'react'
 import {forms} from './formmodel'
+//forms imported containing all form info in a model
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -47,7 +48,8 @@ const Form:React.FC<Props> = ({ setFormopen}) =>{
 
   return (
         <form ref={formref} action="#" onSubmit={handleSubmit(onSubmit)} className='pt-8 pb-6 px-6 bg-newwhite rounded-sm w-5/6 left-0 right-0 mx-auto flex items-center justify-center flex-col absolute top-10 z-20 sm:w-3/4 md:w-3/5 lg:w-1/2 lg:pb-8 lg:pb-10  xl:w-2/5' noValidate>    
-            {forms.map((form)=>(
+            {//loop through all the form objects from the imported form model
+            forms.map((form)=>(
                 <div className="w-full h-10 mb-4">
                     <input type={form.type}  id={form.name} {...register(form.name,{required:true})} placeholder={form.placeholder} className='bg-lightgrey w-full h-10 text-newgrey px-4 text-sm md:text-base'/>
                     <div className='text-newred text-left text-xs ml-2 mb-2'><>{errors[form.name]?.message} </></div>
